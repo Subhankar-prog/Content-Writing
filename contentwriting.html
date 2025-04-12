@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhankar Panda | Content Writer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --accent: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info a {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Sections */
+        section {
+            padding: 3rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 0.5rem auto;
+        }
+        
+        /* About */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .skill {
+            background-color: var(--light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .portfolio-content p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .portfolio-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Writing Approach */
+        .approach-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .approach-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .approach-step {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .approach-step h4 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Education */
+        .education-item {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            padding: 1.5rem;
+            background-color: var(--light);
+            border-radius: 8px;
+        }
+        
+        .education-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-item p {
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Contact */
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background-color: var(--light);
+            border-radius: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Subhankar Panda</h1>
+            <p>Content Writer</p>
+            <div class="contact-info">
+                <a href="mailto:pandasubhankar24@gmail.com">
+                    <i class="fas fa-envelope"></i> pandasubhankar24@gmail.com
+                </a>
+                <a href="tel:+916372466462">
+                    <i class="fas fa-phone"></i> +91 6372 466462
+                </a>
+                <a>
+                    <i class="fas fa-map-marker-alt"></i> Manatri, Odisha - 757017
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#approach">Writing Approach</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    Creative and detail-oriented content writer with a strong command over English and a passion for delivering impactful digital content. I specialize in simplifying complex topics and writing informative, SEO-friendly content for blogs, websites, and digital platforms.
+                </p>
+                <p>
+                    Whether it's lifestyle, real estate, home improvement, or educational topics, I ensure every word serves the reader with clarity and purpose.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <span class="skill">SEO Writing</span>
+                <span class="skill">Blog Structuring</span>
+                <span class="skill">Keyword Research</span>
+                <span class="skill">Content Optimization</span>
+                <span class="skill">Research Writing</span>
+                <span class="skill">Real Estate Content</span>
+                <span class="skill">Lifestyle Content</span>
+                <span class="skill">Grammar & Proofreading</span>
+                <span class="skill">Headline Writing</span>
+                <span class="skill">Creative Writing</span>
+                <span class="skill">WordPress Basics</span>
+                <span class="skill">Time Management</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Articles</h2>
+            <div class="portfolio-grid">
+                <!-- Article 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>🏠 The Ultimate Guide to Buying Your First Home in India</h3>
+                        <p>Buying a home is one of the biggest milestones in a person's life. In this guide, we break down the home buying process into simple steps.</p>
+                        <ul>
+                            <li><strong>Budget Planning:</strong> Assess savings and monthly income to determine affordable EMI</li>
+                            <li><strong>Home Loan Eligibility:</strong> Understand credit score, income proof, and down payment requirements</li>
+                            <li><strong>Location & Property Type:</strong> Evaluate localities for safety and infrastructure</li>
+                            <li><strong>Legal Checks:</strong> Ensure clear land titles and RERA registration</li>
+                            <li><strong>Finalizing the Deal:</strong> Negotiate and review sale agreement carefully</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>🛋️ Top 7 Home Decor Trends to Watch in 2025</h3>
+                        <p>The world of interiors is changing fast, and 2025 is expected to bring in a wave of design elements that blend functionality with personality.</p>
+                        <ul>
+                            <li><strong>Earthy Colour Palettes:</strong> Warm neutrals and natural tones</li>
+                            <li><strong>Sustainable Materials:</strong> Bamboo, recycled wood, natural fibers</li>
+                            <li><strong>Smart Furniture:</strong> Modular designs with built-in charging ports</li>
+                            <li><strong>Japandi Aesthetics:</strong> Japanese minimalism meets Scandinavian coziness</li>
+                            <li><strong>Statement Lighting:</strong> Artistic LED strips and sculptural pendants</li>
+                            <li><strong>Indoor Greenery:</strong> Living walls and potted herb gardens</li>
+                            <li><strong>Multi-functional Rooms:</strong> Dual-purpose spaces for urban living</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>🌆 Why Bangalore is the Real Estate Hotspot for Millennials</h3>
+                        <p>Bangalore isn't just India's tech hub — it's rapidly becoming the top real estate choice for millennials.</p>
+                        <ul>
+                            <li><strong>Job Opportunities:</strong> Booming tech parks and startups</li>
+                            <li><strong>Lifestyle Amenities:</strong> Cafes, coworking spaces, and nightlife</li>
+                            <li><strong>Infrastructure Growth:</strong> Metro expansion and improved civic amenities</li>
+                            <li><strong>Investment Value:</strong> Competitive rates with steady appreciation</li>
+                            <li><strong>Green Living:</strong> Sustainable projects with open spaces</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Writing Approach Section -->
+    <section id="approach">
+        <div class="container">
+            <h2 class="section-title">Writing Approach</h2>
+            <div class="approach-content">
+                <p>My writing process is reader-first. I begin with thorough topic research, organize content logically, write in a clear and friendly tone, and optimize it with keywords and formatting for digital platforms. I revise with care to ensure consistency, clarity, and value.</p>
+                
+                <div class="approach-steps">
+                    <div class="approach-step">
+                        <h4>Research</h4>
+                        <p>Thorough investigation of topics to ensure accuracy and depth of information.</p>
+                    </div>
+                    <div class="approach-step">
+                        <h4>Organization</h4>
+                        <p>Logical structuring of content for optimal readability and flow.</p>
+                    </div>
+                    <div class="approach-step">
+                        <h4>Writing</h4>
+                        <p>Clear, engaging prose tailored to the target audience.</p>
+                    </div>
+                    <div class="approach-step">
+                        <h4>Optimization</h4>
+                        <p>SEO-friendly formatting with strategic keyword placement.</p>
+                    </div>
+                    <div class="approach-step">
+                        <h4>Revision</h4>
+                        <p>Meticulous editing for grammar, consistency, and impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <h3>Master of Computer Application</h3>
+                <p>Centurion University of Technology and Management</p>
+                <p>2021 - 2023</p>
+            </div>
+            
+            <div class="education-item">
+                <h3>Bachelor of Science (IT & Management)</h3>
+                <p>Ravenshaw University</p>
+                <p>2018 - 2021</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-methods">
+                <a href="mailto:pandasubhankar24@gmail.com" class="contact-method">
+                    <i class="fas fa-envelope"></i> pandasubhankar24@gmail.com
+                </a>
+                <a href="tel:+916372466462" class="contact-method">
+                    <i class="fas fa-phone"></i> +91 6372 466462
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Subhankar Panda. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
